@@ -1,10 +1,3 @@
-let song_name = document.getElementById("song_name");
-let singer_name = document.getElementById("singer_name");
-let singer_img = document.getElementById("singer_img");
-let qoute = document.getElementById("qoute");
-let lo = document.getElementById("lo");
-let next_btn = document.getElementById("next_btn");
-
 const qoutes = [
   {
     singer_img: `imgs/Umm-Kulthum/Umm-Kulthum-1.jpeg`,
@@ -68,7 +61,7 @@ const qoutes = [
     اهو من ده وده الحب كده مش عايزه كلام`,
     logo: `imgs/RFTU-4.svg`,
   },
-//   hoda
+  //   hoda
   {
     singer_img: `imgs/Mohammed Abdel Wahab/Mohammed Abdel Wahab-1.jpeg`,
     song_name: `Ay Ser Fek`,
@@ -82,7 +75,7 @@ const qoutes = [
     singer_img: `imgs/Mohammed Abdel Wahab/Mohammed Abdel Wahab-2.jpeg`,
     song_name: `Ana We El Azab We Hawak`,
     singer_name: `Mohammed Abdel Wahab`,
-    qoute:`أنا والعذاب وهواك .. عايشين لبعضينا
+    qoute: `أنا والعذاب وهواك .. عايشين لبعضينا
     <br>
     اخرتها ايه وياك .. يا اللى أنت ناسينا`,
     logo: `imgs/RFTU-2.svg`,
@@ -109,7 +102,7 @@ const qoutes = [
     يهز قلب الحجر لو يفهمه الخالي`,
     logo: `imgs/RFTU-4.svg`,
   },
-// holam
+  // holam
   {
     singer_img: `imgs/Adbul Haleem Hafez/Adbul Haleem Hafez-1.jpeg`,
     song_name: `Zalamoh`,
@@ -127,7 +120,7 @@ const qoutes = [
     singer_img: `imgs/Adbul Haleem Hafez/Adbul Haleem Hafez-2.jpeg`,
     song_name: `Sawwah`,
     singer_name: `Abdel Haleem Hafez`,
-    qoute:`لا أنا عارف أرتاح
+    qoute: `لا أنا عارف أرتاح
 
     وأنا تايه سواح
     <br>
@@ -154,7 +147,7 @@ const qoutes = [
     اول حب يمر عليّا .. قاد لي الدنيا فرح وشموع`,
     logo: `imgs/RFTU-5.svg`,
   },
-// sbah
+  // sbah
   {
     singer_img: `imgs/Sabah Fakhri/Sabah Fakhri-1.jpg`,
     song_name: `ana fy sokrayn`,
@@ -171,7 +164,7 @@ const qoutes = [
     singer_img: `imgs/Sabah Fakhri/Sabah Fakhri-2.jpeg`,
     song_name: `Malek ya hilwa`,
     singer_name: `Sabah Fakhri`,
-    qoute:`مالك يا حلوة مالك
+    qoute: `مالك يا حلوة مالك
     هو الغرام غير حالك
     <br>
     فتنوا عليكي عذالك لما رؤوكي بجمالك
@@ -209,11 +202,24 @@ const qoutes = [
   },
 ];
 
-next_btn.addEventListener("click", function () {
+function change() {
   let rand = Math.floor(Math.random() * qoutes.length);
-  singer_img.src = qoutes[rand].singer_img;
-  song_name.innerText = qoutes[rand].song_name;
-  singer_name.innerText = qoutes[rand].singer_name;
-  qoute.innerHTML = qoutes[rand].qoute;
-  lo.src = qoutes[rand].logo;
-});
+  let contant = `
+            <div class="top">
+                <div class="image">
+                    <img id="singer_img" src="${qoutes[rand].singer_img}" alt="no" srcset="">
+                </div>
+                <div class="name">
+                    <h1 id="song_name">${qoutes[rand].song_name}</h1>
+                    <h3 id="singer_name">${qoutes[rand].singer_name}</h3>
+                </div>
+            </div>
+            <div class="center">
+                <p id="qoute">${qoutes[rand].qoute}</p>
+            </div>
+            <div class="logo">
+                <img class="logo_des" src="imgs/Logo.svg" alt="no">
+                <img id="lo" src="${qoutes[rand].logo}" alt="no">
+            </div>`;
+  document.getElementById("contant_q").innerHTML = contant;
+}
